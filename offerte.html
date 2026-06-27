@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Offerte anfragen – Artefix Bobo Bau GmbH</title>
+  <meta name="description" content="Fordern Sie jetzt eine unverbindliche Offerte an. Artefix Bobo Bau GmbH – Ihr Baupartner in Altdorf UR.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-name">Artefix Bobo Bau</span>
+        <span class="brand-sub">GMBH</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Startseite</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+        <li><a href="offerte.html" class="nav-cta active">Offerte anfragen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="mobile-menu">
+    <a href="index.html">Startseite</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="referenzen.html">Referenzen</a>
+    <a href="offerte.html">Offerte anfragen</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+  <!-- Seitenüberschrift -->
+  <section class="page-header" style="background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663348252337/ZNyBL787S9xFMkHcUXksup/hero-construction-7pvhPLmcp8osfT7pZfqxTm.webp');">
+    <div class="container">
+      <p class="page-eyebrow">Jetzt anfragen</p>
+      <h1>Offerte anfragen</h1>
+      <div class="header-line"></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       OFFERTE-FORMULAR – Formular mit Infos links, Felder rechts
+       ============================================================ -->
+  <section class="form-section">
+    <div class="container">
+      <div class="form-layout">
+
+        <!-- Linke Seite: Informationen und Vorteile -->
+        <div class="form-info fade-in">
+          <h2>Erzählen Sie uns von Ihrem Projekt</h2>
+          <p>Füllen Sie das Formular aus und beschreiben Sie Ihr Vorhaben. Wir melden uns zeitnah bei Ihnen für eine persönliche Beratung und erstellen Ihnen eine unverbindliche Offerte.</p>
+
+          <!-- Vorteile der Offerte -->
+          <ul class="form-benefits">
+            <li>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+              Unverbindliche und kostenlose Offerte
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+              Persönliche Beratung vor Ort
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+              Transparente Kostenaufstellung
+            </li>
+            <li>
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+              Schnelle Rückmeldung
+            </li>
+          </ul>
+        </div>
+
+        <!-- Rechte Seite: Das Formular -->
+        <div class="form-card fade-in delay-2">
+          <form>
+            <!-- Name und E-Mail nebeneinander -->
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="name">Name <span class="required">*</span></label>
+                <input type="text" id="name" placeholder="Ihr vollständiger Name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail <span class="required">*</span></label>
+                <input type="email" id="email" placeholder="ihre@email.ch" required>
+              </div>
+            </div>
+
+            <!-- Telefon und Dienstleistung nebeneinander -->
+            <div class="form-row two-col">
+              <div class="form-group">
+                <label for="phone">Telefonnummer</label>
+                <input type="tel" id="phone" placeholder="+41 ...">
+              </div>
+              <div class="form-group">
+                <label for="service">Gewünschte Dienstleistung <span class="required">*</span></label>
+                <select id="service" required>
+                  <option value="" disabled selected>Bitte wählen</option>
+                  <option value="allgemein">Allgemeine Bauarbeiten</option>
+                  <option value="neubau">Neubau</option>
+                  <option value="umbau">Umbau</option>
+                  <option value="renovation">Renovation</option>
+                  <option value="sanierung">Sanierung</option>
+                  <option value="innenausbau">Innenausbau</option>
+                  <option value="aussen">Aussenarbeiten</option>
+                  <option value="individuell">Individuelles Projekt</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Projektbeschreibung -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="project">Projektbeschreibung <span class="required">*</span></label>
+                <textarea id="project" placeholder="Beschreiben Sie Ihr Projekt kurz (z. B. Umfang, Ort, gewünschter Zeitraum)..." required></textarea>
+              </div>
+            </div>
+
+            <!-- Nachricht -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="message">Nachricht</label>
+                <textarea id="message" placeholder="Weitere Anmerkungen oder Fragen..." style="min-height:80px;"></textarea>
+              </div>
+            </div>
+
+            <!-- Absende-Button -->
+            <div class="form-submit">
+              <button type="submit" class="btn btn-dark">
+                Offerte anfragen <span class="arrow">→</span>
+              </button>
+            </div>
+
+            <p class="form-note">* Pflichtfelder. Ihre Daten werden vertraulich behandelt.</p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h4>Artefix Bobo Bau</h4>
+          <p>Ihr zuverlässiger Partner für Neubauten, Umbauten und Renovationen in der Zentralschweiz.</p>
+          <div class="footer-address">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>c/o Melis Consulting GmbH<br>Lehnplatz 8<br>6460 Altdorf UR</span>
+          </div>
+        </div>
+        <div class="footer-nav"><h4>Navigation</h4><ul><li><a href="index.html">Startseite</a></li><li><a href="ueber-uns.html">Über uns</a></li><li><a href="dienstleistungen.html">Dienstleistungen</a></li><li><a href="referenzen.html">Referenzen</a></li></ul></div>
+        <div class="footer-nav"><h4>Leistungen</h4><ul><li><a href="dienstleistungen.html">Neubauten</a></li><li><a href="dienstleistungen.html">Umbauten</a></li><li><a href="dienstleistungen.html">Renovationen</a></li><li><a href="dienstleistungen.html">Sanierungen</a></li></ul></div>
+        <div class="footer-cta"><h4>Kontakt</h4><p>Haben Sie ein Bauprojekt? Wir beraten Sie gerne.</p><a href="offerte.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);">Offerte anfragen</a></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2025 Artefix Bobo Bau GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
+      </div>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

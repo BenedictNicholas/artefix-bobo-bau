@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <!-- Zeichensatz und Viewport für responsive Darstellung -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artefix Bobo Bau GmbH – Ihr Partner für Bau &amp; Renovation</title>
+  <meta name="description" content="Artefix Bobo Bau GmbH – Ihr Bauunternehmen in Altdorf UR für Neubauten, Umbauten und Renovationen. Qualität und Präzision seit 2023.">
+
+  <!-- Google Fonts – Playfair Display für Headlines, Source Sans 3 für Fliesstext -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Unser Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION – Die Hauptnavigation, fixiert oben am Bildschirm
+       ============================================================ -->
+  <nav class="navbar">
+    <div class="container">
+      <!-- Logo / Firmenname -->
+      <a href="index.html" class="navbar-brand">
+        <span class="brand-name">Artefix Bobo Bau</span>
+        <span class="brand-sub">GMBH</span>
+      </a>
+
+      <!-- Desktop-Navigation – Links zu allen Seiten -->
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Startseite</a></li>
+        <li><a href="ueber-uns.html">Über uns</a></li>
+        <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+        <li><a href="referenzen.html">Referenzen</a></li>
+        <li><a href="offerte.html" class="nav-cta">Offerte anfragen</a></li>
+        <li><a href="kontakt.html">Kontakt</a></li>
+      </ul>
+
+      <!-- Hamburger-Button für das mobile Menü (3 Striche) -->
+      <button class="hamburger" aria-label="Menü öffnen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobiles Menü – wird über JavaScript ein-/ausgeblendet -->
+  <div class="mobile-menu">
+    <a href="index.html">Startseite</a>
+    <a href="ueber-uns.html">Über uns</a>
+    <a href="dienstleistungen.html">Dienstleistungen</a>
+    <a href="referenzen.html">Referenzen</a>
+    <a href="offerte.html">Offerte anfragen</a>
+    <a href="kontakt.html">Kontakt</a>
+  </div>
+
+
+  <!-- ============================================================
+       HERO-BEREICH – Der grosse Einstieg mit Bild und Headline
+       ============================================================ -->
+  <section class="hero">
+    <!-- Hintergrundbild -->
+    <div class="hero-bg" style="background-image: url('https://d2xsxph8kpxj0f.cloudfront.net/310519663348252337/ZNyBL787S9xFMkHcUXksup/hero-construction-7pvhPLmcp8osfT7pZfqxTm.webp');"></div>
+
+    <div class="container">
+      <div class="hero-content">
+        <!-- Kleine Überschrift über dem Haupttitel -->
+        <p class="hero-eyebrow">Bauunternehmen aus Altdorf UR</p>
+
+        <!-- Hauptüberschrift mit Akzentwort -->
+        <h1>Bauen mit <span class="accent">Präzision</span> und Leidenschaft</h1>
+
+        <!-- Kurzer Einführungstext -->
+        <p>Neubauten, Umbauten und Renovationen – professionell geplant und sorgfältig umgesetzt. Ihr Partner in der Zentralschweiz.</p>
+
+        <!-- CTA-Buttons -->
+        <div class="hero-buttons">
+          <a href="offerte.html" class="btn btn-primary">
+            Offerte anfragen <span class="arrow">→</span>
+          </a>
+          <a href="dienstleistungen.html" class="btn btn-secondary">
+            Unsere Leistungen
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scroll-Hinweis unten im Hero -->
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       VERTRAUENSBEREICH – 4 Vorteile, die Vertrauen aufbauen
+       ============================================================ -->
+  <section class="trust-section">
+    <div class="container">
+      <!-- Sektionsüberschrift -->
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Warum Artefix Bobo Bau</p>
+        <h2 class="section-title">Qualität, die man sieht</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Wir stehen für saubere Arbeit, transparente Kommunikation und Ergebnisse, die begeistern.</p>
+      </div>
+
+      <!-- Die 4 Vorteile als Karten -->
+      <div class="trust-grid">
+        <!-- Vorteil 1: Schweizer Qualität -->
+        <div class="trust-item fade-in delay-1">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Schweizer Qualität</h3>
+          <p>Sorgfältige Ausführung nach höchsten Standards – für Ergebnisse, die überzeugen.</p>
+        </div>
+
+        <!-- Vorteil 2: Erfahrung & Kompetenz -->
+        <div class="trust-item fade-in delay-2">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Erfahrung &amp; Kompetenz</h3>
+          <p>Fachkundige Beratung und professionelle Umsetzung für jedes Bauprojekt.</p>
+        </div>
+
+        <!-- Vorteil 3: Termingerecht -->
+        <div class="trust-item fade-in delay-3">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <h3>Termingerecht</h3>
+          <p>Zuverlässige Planung und pünktliche Fertigstellung – darauf können Sie zählen.</p>
+        </div>
+
+        <!-- Vorteil 4: Persönliche Betreuung -->
+        <div class="trust-item fade-in delay-4">
+          <div class="trust-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h3>Persönliche Betreuung</h3>
+          <p>Ihr Ansprechpartner von der ersten Beratung bis zur Schlüsselübergabe.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       DIENSTLEISTUNGEN-VORSCHAU – 4 Hauptleistungen als Karten
+       ============================================================ -->
+  <section class="services-preview">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Unsere Leistungen</p>
+        <h2 class="section-title">Was wir für Sie tun</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Von der ersten Idee bis zur Fertigstellung – wir begleiten Ihr Bauprojekt mit Fachwissen und Engagement.</p>
+      </div>
+
+      <div class="services-grid">
+        <!-- Karte: Neubauten -->
+        <a href="dienstleistungen.html" class="service-card fade-in delay-1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <h3>Neubauten</h3>
+          <p>Vom Fundament bis zum Dach – wir realisieren Ihren Neubau mit Präzision.</p>
+          <span class="card-link">Mehr erfahren <span class="arrow">›</span></span>
+        </a>
+
+        <!-- Karte: Umbauten -->
+        <a href="dienstleistungen.html" class="service-card fade-in delay-2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <h3>Umbauten</h3>
+          <p>Bestehende Räume neu denken und funktional umgestalten.</p>
+          <span class="card-link">Mehr erfahren <span class="arrow">›</span></span>
+        </a>
+
+        <!-- Karte: Renovationen -->
+        <a href="dienstleistungen.html" class="service-card fade-in delay-3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <h3>Renovationen</h3>
+          <p>Frischer Wind für Ihr Zuhause – fachgerechte Renovationen mit Stil.</p>
+          <span class="card-link">Mehr erfahren <span class="arrow">›</span></span>
+        </a>
+
+        <!-- Karte: Sanierungen -->
+        <a href="dienstleistungen.html" class="service-card fade-in delay-4">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3>Sanierungen</h3>
+          <p>Substanz erhalten und aufwerten – nachhaltig und durchdacht.</p>
+          <span class="card-link">Mehr erfahren <span class="arrow">›</span></span>
+        </a>
+      </div>
+
+      <div class="center-btn fade-in">
+        <a href="dienstleistungen.html" class="btn btn-dark">Alle Leistungen ansehen <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       REFERENZEN-VORSCHAU – 3 Beispielprojekte mit Bildern
+       ============================================================ -->
+  <section class="references-preview">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Referenzen</p>
+        <h2 class="section-title">Ausgewählte Projekte</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Ein Einblick in unsere Arbeit – jedes Projekt wird mit derselben Sorgfalt und Leidenschaft umgesetzt.</p>
+      </div>
+
+      <div class="references-grid">
+        <!-- Referenz 1: Badezimmer -->
+        <div class="reference-card fade-in delay-1">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663348252337/ZNyBL787S9xFMkHcUXksup/renovation-bathroom-GT8gTVnNJyG546KEWqYM2K.webp" alt="Badezimmer-Renovation" loading="lazy">
+          <div class="card-overlay">
+            <span class="card-tag">Renovation</span>
+            <span class="card-title">Badezimmer-Renovation</span>
+          </div>
+        </div>
+
+        <!-- Referenz 2: Küche -->
+        <div class="reference-card fade-in delay-2">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663348252337/ZNyBL787S9xFMkHcUXksup/kitchen-remodel-B4FqkYWvM2LK8wR2ts5jp8.webp" alt="Küche & Wohnbereich" loading="lazy">
+          <div class="card-overlay">
+            <span class="card-tag">Umbau</span>
+            <span class="card-title">Küche &amp; Wohnbereich</span>
+          </div>
+        </div>
+
+        <!-- Referenz 3: Fassade -->
+        <div class="reference-card fade-in delay-3">
+          <img src="https://d2xsxph8kpxj0f.cloudfront.net/310519663348252337/ZNyBL787S9xFMkHcUXksup/facade-work-JnAajxdcUPLHYqiF4d6e9M.webp" alt="Fassadensanierung" loading="lazy">
+          <div class="card-overlay">
+            <span class="card-tag">Sanierung</span>
+            <span class="card-title">Fassadensanierung</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="center-btn fade-in">
+        <a href="referenzen.html" class="btn btn-dark">Alle Referenzen ansehen <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA-BEREICH – Aufruf zum Handeln
+       ============================================================ -->
+  <section class="cta-section">
+    <div class="container">
+      <div class="section-header fade-in">
+        <p class="section-eyebrow">Ihr nächstes Projekt</p>
+        <h2 class="section-title">Lassen Sie uns gemeinsam bauen</h2>
+        <div class="section-line"></div>
+        <p class="section-subtitle">Ob Neubau, Umbau oder Renovation – wir freuen uns auf Ihre Anfrage und beraten Sie gerne persönlich und unverbindlich.</p>
+      </div>
+      <div class="cta-buttons fade-in">
+        <a href="offerte.html" class="btn btn-primary">Offerte anfragen <span class="arrow">→</span></a>
+        <a href="kontakt.html" class="btn btn-secondary">Kontakt aufnehmen</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER – Der Fussbereich mit Firmendaten und Links
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Spalte 1: Firmeninfos -->
+        <div class="footer-brand">
+          <h4>Artefix Bobo Bau</h4>
+          <p>Ihr zuverlässiger Partner für Neubauten, Umbauten und Renovationen in der Zentralschweiz. Qualität und Präzision seit 2023.</p>
+          <div class="footer-address">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>c/o Melis Consulting GmbH<br>Lehnplatz 8<br>6460 Altdorf UR</span>
+          </div>
+        </div>
+
+        <!-- Spalte 2: Navigation -->
+        <div class="footer-nav">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="index.html">Startseite</a></li>
+            <li><a href="ueber-uns.html">Über uns</a></li>
+            <li><a href="dienstleistungen.html">Dienstleistungen</a></li>
+            <li><a href="referenzen.html">Referenzen</a></li>
+          </ul>
+        </div>
+
+        <!-- Spalte 3: Leistungen -->
+        <div class="footer-nav">
+          <h4>Leistungen</h4>
+          <ul>
+            <li><a href="dienstleistungen.html">Neubauten</a></li>
+            <li><a href="dienstleistungen.html">Umbauten</a></li>
+            <li><a href="dienstleistungen.html">Renovationen</a></li>
+            <li><a href="dienstleistungen.html">Sanierungen</a></li>
+            <li><a href="dienstleistungen.html">Innenausbau</a></li>
+          </ul>
+        </div>
+
+        <!-- Spalte 4: Kontakt-CTA -->
+        <div class="footer-cta">
+          <h4>Kontakt</h4>
+          <p>Haben Sie ein Bauprojekt? Wir beraten Sie gerne persönlich und unverbindlich.</p>
+          <a href="offerte.html" class="btn btn-outline" style="color:#fff; border-color:rgba(255,255,255,0.2);">Offerte anfragen</a>
+        </div>
+      </div>
+
+      <!-- Unterer Footer mit Copyright und rechtlichen Links -->
+      <div class="footer-bottom">
+        <span>&copy; 2025 Artefix Bobo Bau GmbH. Alle Rechte vorbehalten.</span>
+        <div class="footer-legal">
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript am Ende der Seite laden -->
+  <script src="script.js"></script>
+</body>
+</html>
