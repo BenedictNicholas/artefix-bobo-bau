@@ -1,0 +1,1533 @@
+/* ============================================================
+   style.css – Hauptstylesheet der Artefix Bobo Bau GmbH Website
+   
+   Design: «Alpine Precision» – Schweizer Minimalismus
+   Farben: Warmweiss (#FAF8F5), Anthrazit (#2C2C2C), Sand (#C8B89A)
+   Schriften: Playfair Display (Headlines), Source Sans 3 (Body)
+   
+   Dieses Stylesheet enthält alle Styles für die gesamte Website.
+   Es ist in logische Abschnitte unterteilt, damit man sich
+   schnell zurechtfindet.
+   ============================================================ */
+
+/* --- Grundeinstellungen (Reset & Basis) --- */
+/* Damit alle Browser gleich aussehen, setzen wir Abstände zurück */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* CSS-Variablen – unsere Farbpalette und Schriften als zentrale Werte */
+:root {
+  --white: #FFFFFF;
+  --warm-white: #FAF8F5;
+  --sand-light: #E8E0D4;
+  --sand: #C8B89A;
+  --sand-dark: #A89878;
+  --anthracite: #2C2C2C;
+  --anthracite-light: #3D3D3D;
+  --charcoal: #1A1A1A;
+  --text-body: #555555;
+  --text-muted: #888888;
+  --border-light: #E5E0DA;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', Arial, sans-serif;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.12);
+  --transition: 0.3s ease;
+}
+
+/* Grundlegende Body-Einstellungen */
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--anthracite);
+  background-color: var(--white);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Standard-Links */
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+/* Bilder sollen nie über ihren Container hinausragen */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Container – zentriert den Inhalt und gibt seitlichen Abstand */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 768px) {
+  .container { padding: 0 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .container { padding: 0 2rem; }
+}
+
+
+/* ============================================================
+   NAVIGATION – Die Hauptnavigation oben auf jeder Seite
+   ============================================================ */
+
+/* Der Navigationsbalken, fixiert oben am Bildschirm */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  transition: background var(--transition), padding var(--transition), box-shadow var(--transition);
+}
+
+/* Wenn man scrollt, bekommt die Navigation einen Hintergrund */
+.navbar.scrolled {
+  background: rgba(255, 255, 255, 0.97);
+  padding: 0.6rem 0;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(10px);
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo / Firmenname in der Navigation */
+.navbar-brand {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
+.navbar-brand .brand-name {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--white);
+  transition: color var(--transition);
+}
+
+.navbar-brand .brand-sub {
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  transition: color var(--transition);
+}
+
+/* Wenn gescrollt wird, werden die Texte dunkel */
+.navbar.scrolled .brand-name { color: var(--anthracite); }
+.navbar.scrolled .brand-sub { color: var(--text-muted); }
+
+/* Desktop-Navigation – die Links nebeneinander */
+.nav-links {
+  display: none;
+  list-style: none;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+@media (min-width: 900px) {
+  .nav-links { display: flex; }
+}
+
+.nav-links a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(255,255,255,0.85);
+  border-radius: 6px;
+  transition: all var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--white);
+  background: rgba(255,255,255,0.1);
+}
+
+.nav-links a.active {
+  color: var(--white);
+  background: rgba(255,255,255,0.15);
+}
+
+.navbar.scrolled .nav-links a {
+  color: var(--anthracite);
+}
+
+.navbar.scrolled .nav-links a:hover {
+  color: var(--anthracite);
+  background: var(--warm-white);
+}
+
+.navbar.scrolled .nav-links a.active {
+  color: var(--anthracite);
+  background: var(--warm-white);
+}
+
+/* CTA-Button in der Navigation (z.B. "Offerte anfragen") */
+.nav-links .nav-cta {
+  background: var(--white);
+  color: var(--anthracite) !important;
+  font-weight: 600;
+  padding: 0.5rem 1.25rem;
+  border-radius: 6px;
+  margin-left: 0.5rem;
+}
+
+.nav-links .nav-cta:hover {
+  background: var(--sand-light);
+}
+
+.navbar.scrolled .nav-links .nav-cta {
+  background: var(--anthracite);
+  color: var(--white) !important;
+}
+
+.navbar.scrolled .nav-links .nav-cta:hover {
+  background: var(--anthracite-light);
+}
+
+
+/* --- Hamburger-Menü (Mobile) --- */
+/* Der Button mit den drei Strichen für Mobile */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  z-index: 1001;
+}
+
+@media (min-width: 900px) {
+  .hamburger { display: none; }
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all var(--transition);
+}
+
+.navbar.scrolled .hamburger span {
+  background: var(--anthracite);
+}
+
+/* Animation wenn das Menü offen ist */
+.hamburger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Das mobile Menü, das von oben reinfährt */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--white);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  transform: translateY(-100%);
+  transition: transform 0.4s ease;
+}
+
+.mobile-menu.open {
+  transform: translateY(0);
+}
+
+.mobile-menu a {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--anthracite);
+  padding: 0.75rem 2rem;
+  border-radius: 8px;
+  transition: background var(--transition);
+}
+
+.mobile-menu a:hover {
+  background: var(--warm-white);
+}
+
+
+/* ============================================================
+   HERO-BEREICH – Der grosse Einstiegsbereich auf der Startseite
+   ============================================================ */
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Das Hintergrundbild des Hero-Bereichs */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Dunkler Verlauf über dem Bild, damit der Text lesbar ist */
+.hero-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(26, 26, 26, 0.75) 0%,
+    rgba(26, 26, 26, 0.4) 50%,
+    rgba(26, 26, 26, 0.2) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 650px;
+  padding: 8rem 0 4rem;
+}
+
+/* Kleine Überschrift über dem Haupttitel */
+.hero-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 1.5rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+}
+
+/* Das Akzentwort in der Headline (z.B. "Präzision") */
+.hero h1 .accent {
+  color: var(--sand);
+  font-style: italic;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.7;
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+/* Buttons im Hero-Bereich */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Scroll-Hinweis unten im Hero */
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgba(255,255,255,0.5);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+}
+
+.hero-scroll .scroll-line {
+  width: 1px;
+  height: 40px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollPulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+
+/* ============================================================
+   BUTTONS – Verschiedene Button-Stile
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all var(--transition);
+  text-decoration: none;
+}
+
+/* Primärer Button – heller Hintergrund */
+.btn-primary {
+  background: var(--white);
+  color: var(--anthracite);
+}
+
+.btn-primary:hover {
+  background: var(--sand-light);
+  transform: translateY(-1px);
+}
+
+/* Sekundärer Button – durchsichtiger Rand */
+.btn-secondary {
+  background: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.btn-secondary:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.5);
+}
+
+/* Dunkler Button */
+.btn-dark {
+  background: var(--anthracite);
+  color: var(--white);
+}
+
+.btn-dark:hover {
+  background: var(--anthracite-light);
+  transform: translateY(-1px);
+}
+
+/* Outline-Button (dunkler Rand) */
+.btn-outline {
+  background: transparent;
+  color: var(--anthracite);
+  border: 1px solid var(--border-light);
+}
+
+.btn-outline:hover {
+  background: var(--warm-white);
+  border-color: var(--sand);
+}
+
+/* Pfeil-Symbol im Button */
+.btn .arrow {
+  transition: transform var(--transition);
+}
+.btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+
+/* ============================================================
+   SEKTIONS-ÜBERSCHRIFTEN – Einheitliche Titel für alle Bereiche
+   ============================================================ */
+
+.section-header {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3.5rem;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--anthracite);
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+.section-line {
+  width: 50px;
+  height: 2px;
+  background: var(--sand);
+  margin: 1.25rem auto;
+}
+
+.section-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+
+/* ============================================================
+   VORTEILE-BEREICH – Die 4 Vorteile auf der Startseite
+   ============================================================ */
+
+.trust-section {
+  padding: 5rem 0;
+  background: var(--warm-white);
+}
+
+.trust-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+
+.trust-item {
+  text-align: center;
+  padding: 2rem 1.5rem;
+}
+
+.trust-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1.5px solid var(--sand);
+  border-radius: 12px;
+  color: var(--anthracite);
+}
+
+.trust-icon svg {
+  width: 24px;
+  height: 24px;
+  stroke: var(--anthracite);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.trust-item h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.trust-item p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   DIENSTLEISTUNGEN-VORSCHAU – Karten auf der Startseite
+   ============================================================ */
+
+.services-preview {
+  padding: 5rem 0;
+  background: var(--white);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-card {
+  background: var(--warm-white);
+  border-radius: 10px;
+  padding: 2rem;
+  transition: all var(--transition);
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--sand-light);
+}
+
+.service-card .card-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+.service-card .card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--anthracite);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.service-card p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-card .card-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--anthracite);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.service-card:hover .card-link {
+  color: var(--sand-dark);
+}
+
+.center-btn {
+  text-align: center;
+}
+
+
+/* ============================================================
+   REFERENZEN-VORSCHAU – Projektbilder auf der Startseite
+   ============================================================ */
+
+.references-preview {
+  padding: 5rem 0;
+  background: var(--warm-white);
+}
+
+.references-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.reference-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  cursor: pointer;
+}
+
+.reference-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.reference-card:hover img {
+  transform: scale(1.05);
+}
+
+.reference-card .card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(26,26,26,0.7) 0%, transparent 50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 1.5rem;
+}
+
+.reference-card .card-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 0.35rem;
+}
+
+.reference-card .card-title {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--white);
+}
+
+
+/* ============================================================
+   CTA-BEREICH – "Lassen Sie uns gemeinsam bauen"
+   ============================================================ */
+
+.cta-section {
+  padding: 6rem 0;
+  background: var(--anthracite);
+  text-align: center;
+}
+
+.cta-section .section-eyebrow {
+  color: var(--sand);
+}
+
+.cta-section .section-title {
+  color: var(--white);
+}
+
+.cta-section .section-subtitle {
+  color: rgba(255,255,255,0.7);
+}
+
+.cta-section .section-line {
+  background: var(--sand);
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.cta-section .btn-primary {
+  background: var(--sand);
+  color: var(--anthracite);
+}
+
+.cta-section .btn-primary:hover {
+  background: var(--sand-dark);
+}
+
+
+/* ============================================================
+   PAGE-HEADER – Seitenüberschrift auf Unterseiten
+   ============================================================ */
+
+.page-header {
+  padding: 9rem 0 3rem;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.page-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,26,26,0.8) 0%, rgba(26,26,26,0.5) 100%);
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header .page-eyebrow {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand);
+  margin-bottom: 1rem;
+}
+
+.page-header h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 700;
+  color: var(--white);
+  font-style: italic;
+}
+
+.page-header .header-line {
+  width: 50px;
+  height: 2px;
+  background: var(--sand);
+  margin-top: 1.5rem;
+}
+
+
+/* ============================================================
+   ÜBER UNS SEITE
+   ============================================================ */
+
+.about-content {
+  padding: 5rem 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.about-text .about-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--sand-dark);
+  margin-bottom: 0.75rem;
+}
+
+.about-text h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.3;
+}
+
+.about-text p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.about-image {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 4/3;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Werte-Bereich auf der Über-uns-Seite */
+.values-section {
+  padding: 5rem 0;
+  background: var(--warm-white);
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.value-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+  transition: all var(--transition);
+}
+
+.value-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.value-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.value-card p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* Firmendaten-Bereich */
+.company-data {
+  padding: 5rem 0;
+}
+
+.data-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  background: var(--warm-white);
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+
+.data-item {
+  text-align: center;
+}
+
+.data-item .data-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 0.35rem;
+}
+
+.data-item .data-value {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--anthracite);
+}
+
+
+/* ============================================================
+   DIENSTLEISTUNGEN-SEITE – Alle 8 Leistungskarten
+   ============================================================ */
+
+.services-full {
+  padding: 5rem 0;
+}
+
+.services-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 3rem;
+  font-size: 1.05rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.services-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.service-full-card {
+  background: var(--warm-white);
+  border-radius: 10px;
+  padding: 2rem;
+  border: 1px solid transparent;
+  transition: all var(--transition);
+}
+
+.service-full-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--sand-light);
+}
+
+.service-full-card .card-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border-radius: 10px;
+  border: 1px solid var(--border-light);
+}
+
+.service-full-card .card-icon svg {
+  width: 22px;
+  height: 22px;
+  stroke: var(--anthracite);
+  fill: none;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.service-full-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.service-full-card p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.services-cta {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+
+/* ============================================================
+   REFERENZEN-SEITE – Projektgalerie
+   ============================================================ */
+
+.references-full {
+  padding: 5rem 0;
+}
+
+.references-notice {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--warm-white);
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  margin-bottom: 3rem;
+  font-size: 0.9rem;
+  color: var(--text-body);
+}
+
+.references-notice svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  stroke: var(--text-muted);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.references-full-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.ref-card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--warm-white);
+  transition: all var(--transition);
+}
+
+.ref-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.ref-card-image {
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  position: relative;
+}
+
+.ref-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.ref-card:hover .ref-card-image img {
+  transform: scale(1.05);
+}
+
+.ref-card-image .ref-tag {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background: var(--white);
+  padding: 0.3rem 0.75rem;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--anthracite);
+}
+
+.ref-card-body {
+  padding: 1.5rem;
+}
+
+.ref-card-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ref-card-body p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+
+/* ============================================================
+   FORMULARE – Offerte & Kontakt
+   ============================================================ */
+
+.form-section {
+  padding: 5rem 0;
+}
+
+.form-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  .form-layout {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 4rem;
+  }
+}
+
+.form-info h2 {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+
+.form-info > p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+}
+
+.form-benefits {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.form-benefits li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: var(--text-body);
+}
+
+.form-benefits li svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--sand-dark);
+  fill: none;
+  stroke-width: 2;
+  flex-shrink: 0;
+}
+
+/* Kontaktinformationen */
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.contact-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.contact-item .contact-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--warm-white);
+  border-radius: 10px;
+  flex-shrink: 0;
+}
+
+.contact-item .contact-icon svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--anthracite);
+  fill: none;
+  stroke-width: 1.5;
+}
+
+.contact-item h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.contact-item p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.5;
+}
+
+/* Formular-Felder */
+.form-card {
+  background: var(--warm-white);
+  padding: 2.5rem;
+  border-radius: 10px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+@media (min-width: 500px) {
+  .form-row.two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--anthracite);
+  margin-bottom: 0.4rem;
+}
+
+.form-group label .required {
+  color: #c0392b;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--anthracite);
+  background: var(--white);
+  border: 1px solid var(--border-light);
+  border-radius: 6px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--sand);
+  box-shadow: 0 0 0 3px rgba(200, 184, 154, 0.15);
+}
+
+.form-group textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.form-group select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  padding-right: 2.5rem;
+}
+
+.form-submit {
+  margin-top: 1.5rem;
+}
+
+.form-submit .btn {
+  width: 100%;
+  justify-content: center;
+}
+
+.form-note {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
+}
+
+
+/* ============================================================
+   IMPRESSUM & DATENSCHUTZ – Rechtliche Seiten
+   ============================================================ */
+
+.legal-content {
+  padding: 5rem 0;
+}
+
+.legal-content .legal-inner {
+  max-width: 750px;
+}
+
+.legal-content h2 {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.legal-content h2:first-child {
+  margin-top: 0;
+}
+
+.legal-content p {
+  font-size: 1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  margin-bottom: 0.5rem;
+}
+
+.legal-content strong {
+  color: var(--anthracite);
+}
+
+.legal-content .legal-notice {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--sand-light);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+
+/* ============================================================
+   FOOTER – Der Fussbereich auf jeder Seite
+   ============================================================ */
+
+.footer {
+  background: var(--charcoal);
+  color: rgba(255,255,255,0.7);
+  padding: 4rem 0 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  padding-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+  }
+}
+
+.footer h4 {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 1.25rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 1.25rem;
+}
+
+.footer-address {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.6;
+}
+
+.footer-address svg {
+  width: 16px;
+  height: 16px;
+  stroke: var(--sand);
+  fill: none;
+  stroke-width: 1.5;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.footer-nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-nav a {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.6);
+  transition: color var(--transition);
+}
+
+.footer-nav a:hover {
+  color: var(--white);
+}
+
+.footer-cta p {
+  font-size: 0.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.8rem;
+}
+
+.footer-legal {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.footer-legal a {
+  color: rgba(255,255,255,0.5);
+  transition: color var(--transition);
+}
+
+.footer-legal a:hover {
+  color: var(--white);
+}
+
+
+/* ============================================================
+   ANIMATIONEN – Elemente erscheinen beim Scrollen
+   ============================================================ */
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(25px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Verzögerte Animationen für gestaffelte Effekte */
+.fade-in.delay-1 { transition-delay: 0.1s; }
+.fade-in.delay-2 { transition-delay: 0.2s; }
+.fade-in.delay-3 { transition-delay: 0.3s; }
+.fade-in.delay-4 { transition-delay: 0.4s; }
+
+
+/* ============================================================
+   RESPONSIVE – Anpassungen für verschiedene Bildschirmgrössen
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 7rem 0 3rem;
+  }
+  
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-scroll {
+    display: none;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .references-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .references-full-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .form-card {
+    padding: 1.5rem;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+  }
+
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
